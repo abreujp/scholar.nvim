@@ -8,6 +8,13 @@
       <a href="#"><img alt="Made with Lua" src="https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua" style="vertical-align:center" /></a>
 </p>
 
+## 📸 Preview
+
+<div align="center">
+  <img src="demo.png" alt="Scholar.nvim - Sepia theme for light mode coding" width="800"/>
+  <p><em>Scholar.nvim in action - warm sepia tones creating the perfect academic coding atmosphere</em></p>
+</div>
+
 ## 📚 About Scholar
 
 **scholar.nvim** is a sophisticated Neovim colorscheme designed specifically for **light mode development**. Created for developers, researchers, and academics who value both functionality and aesthetic elegance, Scholar transforms the familiar earthtone palette into a refined sepia experience.
