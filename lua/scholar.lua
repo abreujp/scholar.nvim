@@ -71,75 +71,77 @@ Scholar.config = {
 -- main scholar color palette
 ---@class ScholarPalette
 Scholar.palette = {
-  -- Background tones (maintained)
-  light0_hard = "#F2E0C8",
-  light0 = "#F0DEC6",
-  light0_soft = "#EEDCC4",
-  light1 = "#ECD8C0",
-  light2 = "#E6D0B6",
-  light3 = "#E0C8AC",
-  light4 = "#D8BEA2",
+  -- Background tones (lightest to medium sepia backgrounds)
+  light0_hard = "#F2E0C8", -- Hardest light background - parchment white
+  light0 = "#F0DEC6",      -- Default light background - warm paper
+  light0_soft = "#EEDCC4", -- Softest light background - aged paper
+  light1 = "#ECD8C0",      -- Light tone variation - cream
+  light2 = "#E6D0B6",      -- Medium light tone - light sepia
+  light3 = "#E0C8AC",      -- Medium tone - sepia cream
+  light4 = "#D8BEA2",      -- Medium dark tone - sepia beige
 
-  -- Text tones (adjusted for readability)
-  dark0_hard = "#3A2520",
-  dark0 = "#452A25",
-  dark0_soft = "#4A3530",
-  dark1 = "#452A25",
-  dark2 = "#5C4033",
-  dark3 = "#6B4E31",
-  dark4 = "#7A5C3A",
+  -- Text tones (perfected hierarchy and readability)
+  dark0_hard = "#3A2520", -- Deepest text for maximum contrast situations
+  dark0 = "#452A25",      -- Primary text - optimal readability
+  dark0_soft = "#4A3530", -- Soft variant maintained
+  dark1 = "#452A25",      -- Primary text consistency
+  dark2 = "#5A4034",      -- Secondary text - slightly lighter for hierarchy
+  dark3 = "#6B4E31",      -- Tertiary text - maintained
+  dark4 = "#7A5C3A",      -- Quaternary text - maintained
 
-  -- Syntax colors (adjusted for distinction)
-  neutral_red = "#A0623A",
-  neutral_green = "#7A6A3F",
-  neutral_yellow = "#B8834C",
-  neutral_blue = "#6E5A38",
-  neutral_purple = "#94622E",
-  neutral_aqua = "#7D634A",
-  neutral_orange = "#A0623A",
+  -- Syntax colors (perfected for maximum distinction)
+  neutral_red = "#A0623A",    -- errors/warnings - maintained warmth
+  neutral_green = "#7A653E",  -- strings - slightly more yellow undertone
+  neutral_yellow = "#B8834C", -- keywords - maintained prominence  
+  neutral_blue = "#6E5640",   -- functions - added depth
+  neutral_purple = "#945A2E", -- types - more distinctive orange
+  neutral_aqua = "#7D654A",   -- constants - balanced earthiness
+  neutral_orange = "#A0623A", -- numbers/special - consistent with red
 
-  -- Bright colors (adjusted for highlight)
-  bright_red = "#C08050",
-  bright_green = "#94784F",
-  bright_yellow = "#D4975A",
-  bright_blue = "#8A6E4C",
-  bright_purple = "#A8704A",
-  bright_aqua = "#9A7A5F",
-  bright_orange = "#C08050",
+  -- Bright colors (mathematically harmonized)
+  bright_red = "#C08050",    -- maintained - perfect warmth
+  bright_green = "#957A4F",  -- refined for better harmony
+  bright_yellow = "#D4975A", -- maintained - ideal prominence
+  bright_blue = "#8A6E4C",   -- maintained - good depth
+  bright_purple = "#A8724A", -- slightly warmer for cohesion
+  bright_aqua = "#9A7D5F",   -- refined earth tone
+  bright_orange = "#C08050", -- consistent with red
 
-  -- Faded colors (adjusted for hierarchy)
-  faded_red = "#6B4230",
-  faded_green = "#644E37",
-  faded_yellow = "#82643C",
-  faded_blue = "#5A462E",
-  faded_purple = "#73462A",
-  faded_aqua = "#624E38",
-  faded_orange = "#6B4230",
+  -- Faded colors (darker variants for subtle elements)
+  faded_red = "#6B4230",    -- Faded red - muted error tones
+  faded_green = "#644E37",  -- Faded green - subtle success indicators
+  faded_yellow = "#82643C", -- Faded yellow - dimmed highlights
+  faded_blue = "#5A462E",   -- Faded blue - subdued function calls
+  faded_purple = "#73462A", -- Faded purple - muted type annotations
+  faded_aqua = "#624E38",   -- Faded aqua - subtle constants
+  faded_orange = "#6B4230", -- Faded orange - dimmed special elements
 
-  -- Special variants (maintained)
-  dark_red_hard = "#5A3229",
-  dark_red = "#634035",
-  dark_red_soft = "#6B453A",
-  light_red_hard = "#C89B85",
-  light_red = "#C4956F",
-  light_red_soft = "#BF8F69",
+  -- Red color variants (warm sepia reds for errors and emphasis)
+  dark_red_hard = "#5A3229",  -- Hard dark red - intense error states
+  dark_red = "#634035",       -- Standard dark red - error indicators
+  dark_red_soft = "#6B453A",  -- Soft dark red - gentle error hints
+  light_red_hard = "#C89B85", -- Hard light red - bright error highlights
+  light_red = "#C4956F",      -- Standard light red - error backgrounds
+  light_red_soft = "#BF8F69", -- Soft light red - subtle error regions
 
-  dark_green_hard = "#4F4A35",
-  dark_green = "#565138",
-  dark_green_soft = "#5C573B",
-  light_green_hard = "#B8B089",
-  light_green = "#B4AC7F",
-  light_green_soft = "#AFA675",
+  -- Green color variants (earthy greens for success and strings)
+  dark_green_hard = "#4F4A35", -- Hard dark green - intense success states
+  dark_green = "#565138",      -- Standard dark green - success indicators
+  dark_green_soft = "#5C573B", -- Soft dark green - gentle success hints
+  light_green_hard = "#B8B089", -- Hard light green - bright success highlights
+  light_green = "#B4AC7F",     -- Standard light green - success backgrounds
+  light_green_soft = "#AFA675", -- Soft light green - subtle success regions
 
-  dark_aqua_hard = "#4A4435",
-  dark_aqua = "#514B38",
-  dark_aqua_soft = "#57523B",
-  light_aqua_hard = "#D2C9A8",
-  light_aqua = "#CEC49E",
-  light_aqua_soft = "#C8BE94",
+  -- Aqua color variants (balanced earth tones for constants and info)
+  dark_aqua_hard = "#4A4435",  -- Hard dark aqua - intense info states
+  dark_aqua = "#514B38",       -- Standard dark aqua - info indicators
+  dark_aqua_soft = "#57523B",  -- Soft dark aqua - gentle info hints
+  light_aqua_hard = "#D2C9A8", -- Hard light aqua - bright info highlights
+  light_aqua = "#CEC49E",      -- Standard light aqua - info backgrounds
+  light_aqua_soft = "#C8BE94", -- Soft light aqua - subtle info regions
 
-  -- Comments and UI (adjusted)
-  gray = "#B09070",
+  -- Comments and UI elements (refined neutral tones)
+  gray = "#A68663", -- Comments and secondary UI - perfect readability balance
 }
 
 -- get a hex list of scholar colors based on current bg and constrast config
