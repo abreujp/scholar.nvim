@@ -71,52 +71,52 @@ Scholar.config = {
 -- main scholar color palette
 ---@class ScholarPalette
 Scholar.palette = {
-  -- Background tones (lightest to medium)
-  light0_hard = "#F2E0C8", -- Slightly lighter than original bg
-  light0 = "#F0DEC6", -- color0: Original background
-  light0_soft = "#EEDCC4", -- Slightly darker than bg
-  light1 = "#ECD8C0", -- Light tone variation
-  light2 = "#E6D0B6", -- Medium light tone
-  light3 = "#E0C8AC", -- Medium tone
-  light4 = "#D8BEA2", -- color8: b_black (sépia clara)
+  -- Background tones (maintained)
+  light0_hard = "#F2E0C8",
+  light0 = "#F0DEC6",
+  light0_soft = "#EEDCC4",
+  light1 = "#ECD8C0",
+  light2 = "#E6D0B6",
+  light3 = "#E0C8AC",
+  light4 = "#D8BEA2",
 
-  -- Text tones (darkest to medium)
-  dark0_hard = "#3A2520", -- Darker than main text
-  dark0 = "#4A2C2A", -- color15: Main text
-  dark0_soft = "#4A3530", -- Soft variant
-  dark1 = "#4A2C2A", -- color15: Main text (primary)
-  dark2 = "#5C4033", -- color7: Medium brown
-  dark3 = "#6B4E31", -- color4: Sépia escuro
-  dark4 = "#7A5C3A", -- color6: Sépia terroso
+  -- Text tones (adjusted for readability)
+  dark0_hard = "#3A2520",
+  dark0 = "#452A25",
+  dark0_soft = "#4A3530",
+  dark1 = "#452A25",
+  dark2 = "#5C4033",
+  dark3 = "#6B4E31",
+  dark4 = "#7A5C3A",
 
-  -- Syntax colors (using original terminal colors)
-  neutral_red = "#8B5A2B", -- color1: Sépia avermelhado
-  neutral_green = "#7B5A3B", -- color2: Sépia acinzentado
-  neutral_yellow = "#A67A44", -- color3: Sépia amarelado
-  neutral_blue = "#6B4E31", -- color4: Sépia escuro
-  neutral_purple = "#8D5524", -- color5: Sépia quente
-  neutral_aqua = "#7A5C3A", -- color6: Sépia terroso
-  neutral_orange = "#8B5A2B", -- Based on color1
+  -- Syntax colors (adjusted for distinction)
+  neutral_red = "#A0623A",
+  neutral_green = "#7A6A3F",
+  neutral_yellow = "#B8834C",
+  neutral_blue = "#6E5A38",
+  neutral_purple = "#94622E",
+  neutral_aqua = "#7D634A",
+  neutral_orange = "#A0623A",
 
-  -- Bright colors (using bright terminal colors)
-  bright_red = "#A8653B", -- color9: Sépia avermelhado claro
-  bright_green = "#9B7A4B", -- color10: Sépia acinzentado claro
-  bright_yellow = "#C2945E", -- color11: Sépia amarelado claro
-  bright_blue = "#8A6A44", -- color12: Sépia escuro claro
-  bright_purple = "#A86E4A", -- color13: Sépia quente claro
-  bright_aqua = "#9A7B5A", -- color14: Sépia terroso claro
-  bright_orange = "#A8653B", -- Based on color9
+  -- Bright colors (adjusted for highlight)
+  bright_red = "#C08050",
+  bright_green = "#94784F",
+  bright_yellow = "#D4975A",
+  bright_blue = "#8A6E4C",
+  bright_purple = "#A8704A",
+  bright_aqua = "#9A7A5F",
+  bright_orange = "#C08050",
 
-  -- Faded colors (darker variants)
-  faded_red = "#6B4230", -- Darker version of color1
-  faded_green = "#5F4832", -- Darker version of color2
-  faded_yellow = "#7A5F3A", -- Darker version of color3
-  faded_blue = "#524028", -- Darker version of color4
-  faded_purple = "#6B3F20", -- Darker version of color5
-  faded_aqua = "#5A4631", -- Darker version of color6
-  faded_orange = "#6B4230", -- Darker variant
+  -- Faded colors (adjusted for hierarchy)
+  faded_red = "#6B4230",
+  faded_green = "#644E37",
+  faded_yellow = "#82643C",
+  faded_blue = "#5A462E",
+  faded_purple = "#73462A",
+  faded_aqua = "#624E38",
+  faded_orange = "#6B4230",
 
-  -- Special color variants (all sepia tones)
+  -- Special variants (maintained)
   dark_red_hard = "#5A3229",
   dark_red = "#634035",
   dark_red_soft = "#6B453A",
@@ -138,8 +138,8 @@ Scholar.palette = {
   light_aqua = "#CEC49E",
   light_aqua_soft = "#C8BE94",
 
-  -- Comments and UI
-  gray = "#B89A6C", -- color8: Sépia clara para comentários
+  -- Comments and UI (adjusted)
+  gray = "#B09070",
 }
 
 -- get a hex list of scholar colors based on current bg and constrast config
