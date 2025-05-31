@@ -1,132 +1,177 @@
 <div align="center">
       <h1>scholar.nvim</h1>
-     </div>
+      <p><em>A scholarly sepia colorscheme for light mode coding</em></p>
+      <p><strong>🌅 Light Theme Only</strong> - Optimized for comfortable daytime development</p>
+</div>
+
 <p align="center"> 
       <a href="#"><img alt="Made with Lua" src="https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua" style="vertical-align:center" /></a>
 </p>
 
-A beautiful and elegant Neovim colorscheme with [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) and [semantic highlights](https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight) support!
+## 📚 About Scholar
 
-# Prerequisites
+**scholar.nvim** is a sophisticated Neovim colorscheme designed specifically for **light mode development**. Created for developers, researchers, and academics who value both functionality and aesthetic elegance, Scholar transforms the familiar earthtone palette into a refined sepia experience.
 
-Neovim 0.8.0+
+**🌅 Light Theme Focus:** Scholar is exclusively designed for light backgrounds and has not been optimized for dark mode. The sepia palette works best with light backgrounds to achieve the intended academic reading atmosphere.
 
-# Installing
+### 🎨 Design Philosophy
 
-## Using `packer`
+Scholar draws its inspiration from the **sepia theme** of the **Readera** Android reading app, which uses warm, paper-like tones that reduce eye strain during extended reading sessions. This same principle applies to coding - the sepia palette creates a comfortable, academic atmosphere perfect for long development sessions, research, and thoughtful programming.
+
+**Why sepia tones on light backgrounds?**
+- **Reduced eye fatigue** during extended coding sessions in bright environments
+- **Academic ambiance** reminiscent of vintage manuscripts and libraries  
+- **Professional appearance** suitable for scholarly and research environments
+- **Warm, inviting atmosphere** that encourages focused work
+- **Optimized for daylight** - perfect for office and well-lit workspace environments
+
+### ✨ Key Features
+
+- **Light mode exclusive** - Specifically designed and optimized for light backgrounds
+- **Based on gruvbox.nvim** - Inherits the robust architecture and reliability
+- **Sepia color palette** - Warm, academic tones inspired by Readera
+- **Full treesitter support** - Enhanced syntax highlighting
+- **LSP semantic highlights** - Modern language server integration
+- **Customizable** - Extensive configuration options
+- **Academic focus** - Perfect for research, documentation, and scholarly coding
+
+### ⚠️ Important Note
+
+**Scholar does not support dark mode.** This theme has been exclusively crafted for light backgrounds to achieve the intended sepia aesthetic reminiscent of academic paper and vintage manuscripts. Using `vim.o.background = "dark"` is not recommended and may result in poor contrast and readability.
+
+## 🔧 Requirements
+
+- Neovim 0.8.0+
+- **Light background environment** - Scholar is designed for well-lit workspaces
+
+## 📦 Installation
+
+### Using `lazy.nvim` (recommended)
 
 ```lua
-use { "abreujp/scholar.nvim" }
+{
+  "abreujp/scholar.nvim",
+  priority = 1000,
+  config = function()
+    require("scholar").setup({
+      -- your configuration here
+    })
+    vim.o.background = "light"  -- REQUIRED: Scholar only works with light mode
+    vim.cmd("colorscheme scholar")
+  end,
+}
 ```
 
-## Using `lazy.nvim`
+### Using `packer`
 
 ```lua
-{ "abreujp/scholar.nvim", priority = 1000 , config = true, opts = ...}
+use {
+  "abreujp/scholar.nvim",
+  config = function()
+    require("scholar").setup()
+    vim.o.background = "light"  -- REQUIRED: Always use light mode
+    vim.cmd("colorscheme scholar")
+  end
+}
 ```
 
-## Using `vim-plug`
+### Using `vim-plug`
 
 ```vim
 Plug 'abreujp/scholar.nvim'
 ```
 
-# Basic Usage
+## 🚀 Quick Start
 
-Inside `init.vim`
+### Lua Configuration
+
+```lua
+require("scholar").setup({
+  contrast = "soft",  -- "hard", "soft" or "" (default)
+  transparent_mode = false,
+})
+vim.o.background = "light"  -- ALWAYS use light - dark mode not supported
+vim.cmd("colorscheme scholar")
+```
+
+### Vim Configuration
 
 ```vim
-set background=dark " or light if you want light mode
+set background=light  " REQUIRED - Scholar does not support dark mode
 colorscheme scholar
 ```
 
-Inside `init.lua`
+## ⚙️ Configuration
+
+Scholar provides extensive customization options while maintaining sensible defaults:
 
 ```lua
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme scholar]])
-```
-
-# Configuration
-
-Additional settings for scholar are:
-
-```lua
--- Default options:
 require("scholar").setup({
-  terminal_colors = true, -- add neovim terminal colors
-  undercurl = true,
-  underline = true,
-  bold = true,
+  terminal_colors = true,     -- Enable terminal colors
+  undercurl = true,          -- Enable undercurls for diagnostics
+  underline = true,          -- Enable underlines
+  bold = true,               -- Enable bold text
   italic = {
-    strings = true,
-    emphasis = true,
-    comments = true,
-    operators = false,
-    folds = true,
+    strings = true,          -- Italicize strings
+    emphasis = true,         -- Italicize emphasized text
+    comments = true,         -- Italicize comments
+    operators = false,       -- Don't italicize operators
+    folds = true,           -- Italicize fold text
   },
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "", -- can be "hard", "soft" or empty string
-  palette_overrides = {},
-  overrides = {},
-  dim_inactive = false,
-  transparent_mode = false,
+  strikethrough = true,      -- Enable strikethrough
+  invert_selection = false,  -- Don't invert selections
+  invert_signs = false,      -- Don't invert sign column
+  invert_tabline = false,    -- Don't invert tabline
+  inverse = true,            -- Invert background for search, diffs, etc.
+  contrast = "",             -- Contrast level: "hard", "soft", or ""
+  palette_overrides = {},    -- Override palette colors
+  overrides = {},            -- Override highlight groups
+  dim_inactive = false,      -- Don't dim inactive windows
+  transparent_mode = false,  -- Disable transparent background
 })
-vim.cmd("colorscheme scholar")
 ```
 
-**VERY IMPORTANT**: Make sure to call setup() **BEFORE** calling the colorscheme command, to use your custom configs
+**⚠️ Important:** Always call `setup()` before setting the colorscheme!
 
-## Overriding
+### Palette Customization
 
-### Palette
-
-You can specify your own palette colors. For example:
+Override specific colors while maintaining the sepia harmony:
 
 ```lua
 require("scholar").setup({
-    palette_overrides = {
-        bright_green = "#990000",
-    }
+  palette_overrides = {
+    bright_red = "#CC6666",    -- Custom error color
+    gray = "#999999",          -- Custom comment color
+  }
 })
-vim.cmd("colorscheme scholar")
 ```
 
-### Highlight groups
+### Highlight Group Overrides
 
-If you don't enjoy the current color for a specific highlight group, now you can just override it in the setup. For
-example:
+Customize specific highlighting:
 
 ```lua
 require("scholar").setup({
-    overrides = {
-        SignColumn = {bg = "#ff9900"}
-    }
+  overrides = {
+    -- UI elements
+    SignColumn = { bg = "#F5F5DC" },
+    
+    -- Treesitter groups
+    ["@comment.lua"] = { fg = "#8B7355", italic = true },
+    ["@string"] = { fg = "#8B6F47" },
+    
+    -- LSP semantic tokens
+    ["@lsp.type.method"] = { fg = "#A0623A", bold = true },
+  }
 })
-vim.cmd("colorscheme scholar")
 ```
 
-It also works with treesitter groups and lsp semantic highlight tokens
+## 🎨 Acknowledgments
 
-```lua
-require("scholar").setup({
-    overrides = {
-        ["@lsp.type.method"] = { bg = "#ff9900" },
-        ["@comment.lua"] = { bg = "#000000" },
-    }
-})
-vim.cmd("colorscheme scholar")
-```
+**scholar.nvim** is built upon the excellent foundation of [gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) by [@ellisonleao](https://github.com/ellisonleao). The robust architecture and thoughtful design of gruvbox made Scholar possible.
 
-Please note that the override values must follow the attributes from the highlight group map, such as:
+**Color inspiration** comes from the sepia reading theme in the [Readera](https://play.google.com/store/apps/details?id=org.readera) Android app, which demonstrates how warm, paper-like tones can reduce eye strain and create a comfortable reading environment.
 
-- **fg** - foreground color
-- **bg** - background color
-- **bold** - true or false for bold font
-- **italic** - true or false for italic font
+## 📄 License
 
-Other values can be seen in [`synIDattr`](<https://neovim.io/doc/user/builtin.html#synIDattr()>)
+MIT License - see [LICENSE](LICENSE) for details.
