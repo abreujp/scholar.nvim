@@ -1,4 +1,4 @@
-*scholar.nvim.txt*         For Neovim >= 0.8.0        Last change: 2025 May 31
+*scholar.nvim.txt*         For Neovim >= 0.8.0        Last change: 2025 June 01
 
 ==============================================================================
 Table of Contents                             *scholar.nvim-table-of-contents*
@@ -14,7 +14,7 @@ Table of Contents                             *scholar.nvim-table-of-contents*
 
 A beautiful and elegant Neovim colorscheme with treesitter
 <https://github.com/nvim-treesitter/nvim-treesitter> and |semantic highlights|
-support!
+support! Now available in both light and dark themes with sepia tones.
 
 ==============================================================================
 1. Prerequisites                                  *scholar.nvim-prerequisites*
@@ -48,15 +48,25 @@ USING VIM-PLUG                        *scholar.nvim-installing-using-vim-plug*
 Inside `init.vim`
 
 >vim
-    set background=dark " or light if you want light mode
+    " For light theme (primary)
+    set background=light
     colorscheme scholar
+    
+    " OR for dark theme
+    " set background=dark
+    " colorscheme scholar
 <
 
 Inside `init.lua`
 
 >lua
-    vim.o.background = "dark" -- or "light" for light mode
+    -- For light theme (primary)
+    vim.o.background = "light"
     vim.cmd([[colorscheme scholar]])
+    
+    -- OR for dark theme
+    -- vim.o.background = "dark"
+    -- vim.cmd([[colorscheme scholar]])
 <
 
 ==============================================================================

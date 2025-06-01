@@ -89,6 +89,24 @@ Scholar.palette = {
   dark3 = "#6B4E31", -- Tertiary text - maintained
   dark4 = "#7A5C3A", -- Quaternary text - maintained
 
+  -- Dark theme background tones (darkest to medium sepia backgrounds)
+  dark_bg0_hard = "#1B1512", -- Hardest dark background - deep charcoal sepia
+  dark_bg0 = "#1F1815", -- Default dark background - warm dark paper
+  dark_bg0_soft = "#221B18", -- Softest dark background - gentle dark
+  dark_bg1 = "#241D1A", -- Dark tone variation - dark cream
+  dark_bg2 = "#2A211E", -- Medium dark tone - dark sepia
+  dark_bg3 = "#302722", -- Medium tone - dark sepia cream
+  dark_bg4 = "#362D28", -- Medium light tone - dark sepia beige
+
+  -- Dark theme text tones (lightest to medium sepia text)
+  light_fg0_hard = "#F5E8D5", -- Brightest text for maximum contrast situations
+  light_fg0 = "#F0E0CC", -- Primary text - optimal readability in dark
+  light_fg0_soft = "#EBD8C4", -- Soft variant for dark backgrounds
+  light_fg1 = "#E6D0BC", -- Primary text consistency in dark
+  light_fg2 = "#E0C8B4", -- Secondary text - slightly darker for hierarchy
+  light_fg3 = "#DAC0AC", -- Tertiary text - well balanced
+  light_fg4 = "#D4B8A4", -- Quaternary text - subtle but readable
+
   -- Syntax colors (perfected for maximum distinction)
   neutral_red = "#A0623A", -- errors/warnings - maintained warmth
   neutral_green = "#7A653E", -- strings - slightly more yellow undertone
@@ -97,6 +115,15 @@ Scholar.palette = {
   neutral_purple = "#945A2E", -- types - more distinctive orange
   neutral_aqua = "#7D654A", -- constants - balanced earthiness
   neutral_orange = "#A0623A", -- numbers/special - consistent with red
+
+  -- Dark theme syntax colors (enhanced for dark backgrounds)
+  dark_neutral_red = "#D4845A", -- errors/warnings - warmer and brighter
+  dark_neutral_green = "#B8945E", -- strings - enhanced yellow undertone
+  dark_neutral_yellow = "#E8A76C", -- keywords - more prominent for dark
+  dark_neutral_blue = "#9E7660", -- functions - enhanced depth
+  dark_neutral_purple = "#B4724E", -- types - warmer orange for dark
+  dark_neutral_aqua = "#AD856A", -- constants - enhanced earthiness
+  dark_neutral_orange = "#D4845A", -- numbers/special - consistent with red
 
   -- Bright colors (mathematically harmonized)
   bright_red = "#C08050", -- maintained - perfect warmth
@@ -107,6 +134,15 @@ Scholar.palette = {
   bright_aqua = "#9A7D5F", -- refined earth tone
   bright_orange = "#C08050", -- consistent with red
 
+  -- Dark theme bright colors (enhanced for dark backgrounds)
+  dark_bright_red = "#E8A080", -- enhanced warmth for dark
+  dark_bright_green = "#C5AA7F", -- improved harmony for dark
+  dark_bright_yellow = "#F4B78A", -- enhanced prominence for dark
+  dark_bright_blue = "#BAAA8C", -- improved depth for dark
+  dark_bright_purple = "#D8A27A", -- enhanced cohesion for dark
+  dark_bright_aqua = "#CAAD8F", -- enhanced earth tone for dark
+  dark_bright_orange = "#E8A080", -- consistent with red for dark
+
   -- Faded colors (darker variants for subtle elements)
   faded_red = "#6B4230", -- Faded red - muted error tones
   faded_green = "#644E37", -- Faded green - subtle success indicators
@@ -116,6 +152,15 @@ Scholar.palette = {
   faded_aqua = "#624E38", -- Faded aqua - subtle constants
   faded_orange = "#6B4230", -- Faded orange - dimmed special elements
 
+  -- Dark theme faded colors (brighter variants for subtle elements)
+  dark_faded_red = "#A87060", -- Enhanced red for dark backgrounds
+  dark_faded_green = "#947E67", -- Enhanced green for dark backgrounds
+  dark_faded_yellow = "#B2946C", -- Enhanced yellow for dark backgrounds
+  dark_faded_blue = "#8A765E", -- Enhanced blue for dark backgrounds
+  dark_faded_purple = "#A3765A", -- Enhanced purple for dark backgrounds
+  dark_faded_aqua = "#927E68", -- Enhanced aqua for dark backgrounds
+  dark_faded_orange = "#A87060", -- Enhanced orange for dark backgrounds
+
   -- Red color variants (warm sepia reds for errors and emphasis)
   dark_red_hard = "#5A3229", -- Hard dark red - intense error states
   dark_red = "#634035", -- Standard dark red - error indicators
@@ -123,6 +168,11 @@ Scholar.palette = {
   light_red_hard = "#C89B85", -- Hard light red - bright error highlights
   light_red = "#C4956F", -- Standard light red - error backgrounds
   light_red_soft = "#BF8F69", -- Soft light red - subtle error regions
+
+  -- Dark theme red variants (enhanced for dark backgrounds)
+  dark_theme_red_hard = "#E8B8A5", -- Hard red for dark theme
+  dark_theme_red = "#E4B59F", -- Standard red for dark theme
+  dark_theme_red_soft = "#DFAF99", -- Soft red for dark theme
 
   -- Green color variants (earthy greens for success and strings)
   dark_green_hard = "#4F4A35", -- Hard dark green - intense success states
@@ -132,6 +182,11 @@ Scholar.palette = {
   light_green = "#B4AC7F", -- Standard light green - success backgrounds
   light_green_soft = "#AFA675", -- Soft light green - subtle success regions
 
+  -- Dark theme green variants (enhanced for dark backgrounds)
+  dark_theme_green_hard = "#D8D0A9", -- Hard green for dark theme
+  dark_theme_green = "#D4CC9F", -- Standard green for dark theme
+  dark_theme_green_soft = "#CFC695", -- Soft green for dark theme
+
   -- Aqua color variants (balanced earth tones for constants and info)
   dark_aqua_hard = "#4A4435", -- Hard dark aqua - intense info states
   dark_aqua = "#514B38", -- Standard dark aqua - info indicators
@@ -140,8 +195,16 @@ Scholar.palette = {
   light_aqua = "#CEC49E", -- Standard light aqua - info backgrounds
   light_aqua_soft = "#C8BE94", -- Soft light aqua - subtle info regions
 
+  -- Dark theme aqua variants (enhanced for dark backgrounds)
+  dark_theme_aqua_hard = "#F2E9C8", -- Hard aqua for dark theme
+  dark_theme_aqua = "#EEE4BE", -- Standard aqua for dark theme
+  dark_theme_aqua_soft = "#E8DEB4", -- Soft aqua for dark theme
+
   -- Comments and UI elements (refined neutral tones)
   gray = "#A68663", -- Comments and secondary UI - perfect readability balance
+
+  -- Dark theme gray (enhanced for dark backgrounds)
+  dark_gray = "#C6A683", -- Enhanced comments and UI for dark backgrounds
 }
 
 -- get a hex list of scholar colors based on current bg and constrast config
@@ -158,33 +221,33 @@ local function get_colors()
 
   local color_groups = {
     dark = {
-      bg0 = p.dark0,
-      bg1 = p.dark1,
-      bg2 = p.dark2,
-      bg3 = p.dark3,
-      bg4 = p.dark4,
-      fg0 = p.light0,
-      fg1 = p.light1,
-      fg2 = p.light2,
-      fg3 = p.light3,
-      fg4 = p.light4,
-      red = p.bright_red,
-      green = p.bright_green,
-      yellow = p.bright_yellow,
-      blue = p.bright_blue,
-      purple = p.bright_purple,
-      aqua = p.bright_aqua,
-      orange = p.bright_orange,
-      neutral_red = p.neutral_red,
-      neutral_green = p.neutral_green,
-      neutral_yellow = p.neutral_yellow,
-      neutral_blue = p.neutral_blue,
-      neutral_purple = p.neutral_purple,
-      neutral_aqua = p.neutral_aqua,
-      dark_red = p.dark_red,
-      dark_green = p.dark_green,
-      dark_aqua = p.dark_aqua,
-      gray = p.gray,
+      bg0 = p.dark_bg0,
+      bg1 = p.dark_bg1,
+      bg2 = p.dark_bg2,
+      bg3 = p.dark_bg3,
+      bg4 = p.dark_bg4,
+      fg0 = p.light_fg0,
+      fg1 = p.light_fg1,
+      fg2 = p.light_fg2,
+      fg3 = p.light_fg3,
+      fg4 = p.light_fg4,
+      red = p.dark_bright_red,
+      green = p.dark_bright_green,
+      yellow = p.dark_bright_yellow,
+      blue = p.dark_bright_blue,
+      purple = p.dark_bright_purple,
+      aqua = p.dark_bright_aqua,
+      orange = p.dark_bright_orange,
+      neutral_red = p.dark_neutral_red,
+      neutral_green = p.dark_neutral_green,
+      neutral_yellow = p.dark_neutral_yellow,
+      neutral_blue = p.dark_neutral_blue,
+      neutral_purple = p.dark_neutral_purple,
+      neutral_aqua = p.dark_neutral_aqua,
+      dark_red = p.dark_theme_red,
+      dark_green = p.dark_theme_green,
+      dark_aqua = p.dark_theme_aqua,
+      gray = p.dark_gray,
     },
     light = {
       bg0 = p.light0,
@@ -218,10 +281,17 @@ local function get_colors()
   }
 
   if contrast ~= nil and contrast ~= "" then
-    color_groups[bg].bg0 = p[bg .. "0_" .. contrast]
-    color_groups[bg].dark_red = p[bg .. "_red_" .. contrast]
-    color_groups[bg].dark_green = p[bg .. "_green_" .. contrast]
-    color_groups[bg].dark_aqua = p[bg .. "_aqua_" .. contrast]
+    if bg == "dark" then
+      color_groups[bg].bg0 = p["dark_bg0_" .. contrast]
+      color_groups[bg].dark_red = p["dark_theme_red_" .. contrast]
+      color_groups[bg].dark_green = p["dark_theme_green_" .. contrast]
+      color_groups[bg].dark_aqua = p["dark_theme_aqua_" .. contrast]
+    else
+      color_groups[bg].bg0 = p[bg .. "0_" .. contrast]
+      color_groups[bg].dark_red = p[bg .. "_red_" .. contrast]
+      color_groups[bg].dark_green = p[bg .. "_green_" .. contrast]
+      color_groups[bg].dark_aqua = p[bg .. "_aqua_" .. contrast]
+    end
   end
 
   return color_groups[bg]
