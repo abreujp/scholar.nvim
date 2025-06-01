@@ -1,51 +1,127 @@
-*scholar.nvim.txt*         For Neovim >= 0.8.0        Last change: 2025 June 01
+*scholar.nvim.txt*        For Neovim >= 0.8.0        Last change: 2025 June 01
 
 ==============================================================================
 Table of Contents                             *scholar.nvim-table-of-contents*
 
-1. Prerequisites                                  |scholar.nvim-prerequisites|
-2. Installing                                        |scholar.nvim-installing|
-  - Using packer                        |scholar.nvim-installing-using-packer|
-  - Using lazy.nvim                  |scholar.nvim-installing-using-lazy.nvim|
-  - Using vim-plug                    |scholar.nvim-installing-using-vim-plug|
-3. Basic Usage                                      |scholar.nvim-basic-usage|
-4. Configuration                                  |scholar.nvim-configuration|
-  - Overriding                         |scholar.nvim-configuration-overriding|
+  - Preview                                             |scholar.nvim-preview|
+  - About Scholar                                 |scholar.nvim-about-scholar|
+  - Requirements                                   |scholar.nvim-requirements|
+  - Installation                                   |scholar.nvim-installation|
+  - Quick Start                                     |scholar.nvim-quick-start|
+  - Configuration                                 |scholar.nvim-configuration|
+  - Acknowledgments                             |scholar.nvim-acknowledgments|
+  - License                                             |scholar.nvim-license|
+1. Links                                                  |scholar.nvim-links|
 
-A beautiful and elegant Neovim colorscheme with treesitter
-<https://github.com/nvim-treesitter/nvim-treesitter> and |semantic highlights|
-support! Now available in both light and dark themes with sepia tones.
 
-==============================================================================
-1. Prerequisites                                  *scholar.nvim-prerequisites*
+PREVIEW                                                 *scholar.nvim-preview*
 
-Neovim 0.8.0+
 
-==============================================================================
-2. Installing                                        *scholar.nvim-installing*
 
-USING PACKER                            *scholar.nvim-installing-using-packer*
+ABOUT SCHOLAR                                     *scholar.nvim-about-scholar*
+
+**scholar.nvim** is a sophisticated Neovim colorscheme designed with an
+emphasis on **light mode development** while now offering a refined **dark mode
+companion**. Created for developers, researchers, and academics who value both
+functionality and aesthetic elegance, Scholar transforms the familiar earthtone
+palette into a refined sepia experience.
+
+**Light Theme Primary:** Scholar’s light theme remains the primary focus,
+exclusively designed for light backgrounds to achieve the intended academic
+reading atmosphere inspired by sepia-toned manuscripts.
+
+**Dark Theme Available:** The new dark companion maintains the same sepia
+harmony and academic elegance, carefully adapted for low-light environments
+while preserving the scholarly aesthetic.
+
+
+DESIGN PHILOSOPHY ~
+
+Scholar draws its inspiration from the **sepia theme** of the **Readera**
+Android reading app, which uses warm, paper-like tones that reduce eye strain
+during extended reading sessions. This same principle applies to coding - the
+sepia palette creates a comfortable, academic atmosphere perfect for long
+development sessions, research, and thoughtful programming.
+
+**Why sepia tones for both light and dark?** - **Reduced eye fatigue** during
+extended coding sessions in any lighting condition - **Academic ambiance**
+reminiscent of vintage manuscripts and libraries - **Professional appearance**
+suitable for scholarly and research environments - **Warm, inviting
+atmosphere** that encourages focused work - **Adaptable** - Light theme for
+bright environments, dark theme for low-light settings - **Consistent
+aesthetic** - Both themes maintain the same scholarly character
+
+
+KEY FEATURES ~
+
+- **Dual theme support** - Primary light theme with companion dark theme
+- **Based on gruvbox.nvim** - Inherits the robust architecture and reliability
+- **Sepia color palette** - Warm, academic tones inspired by Readera
+- **Full treesitter support** - Enhanced syntax highlighting
+- **LSP semantic highlights** - Modern language server integration
+- **Customizable** - Extensive configuration options
+- **Academic focus** - Perfect for research, documentation, and scholarly coding
+- **Light/Dark harmony** - Both themes share the same aesthetic principles
+
+
+REQUIREMENTS                                       *scholar.nvim-requirements*
+
+- Neovim 0.8.0+
+
+
+INSTALLATION                                       *scholar.nvim-installation*
+
+
+USING LAZY.NVIM (RECOMMENDED) ~
 
 >lua
-    use { "abreujp/scholar.nvim" }
+    {
+      "abreujp/scholar.nvim",
+      priority = 1000,
+      config = function()
+        require("scholar").setup({
+          -- your configuration here
+        })
+        
+        -- For light theme (primary)
+        vim.o.background = "light"
+        vim.cmd("colorscheme scholar")
+        
+        -- OR for dark theme
+        -- vim.o.background = "dark"
+        -- vim.cmd("colorscheme scholar")
+      end,
+    }
 <
 
-USING LAZY.NVIM                      *scholar.nvim-installing-using-lazy.nvim*
+
+USING PACKER ~
 
 >lua
-    { "abreujp/scholar.nvim", priority = 1000 , config = true, opts = ...}
+    use {
+      "abreujp/scholar.nvim",
+      config = function()
+        require("scholar").setup()
+        
+        -- Choose your preferred theme
+        vim.o.background = "light"  -- For light theme
+        vim.cmd("colorscheme scholar")
+        
+        -- OR use: 
+        -- vim.o.background = "dark"
+        -- vim.cmd("colorscheme scholar") for dark theme
+      end
+    }
 <
 
-USING VIM-PLUG                        *scholar.nvim-installing-using-vim-plug*
+
+USING VIM-PLUG ~
 
 >vim
     Plug 'abreujp/scholar.nvim'
 <
 
-==============================================================================
-3. Basic Usage                                      *scholar.nvim-basic-usage*
-
-Inside `init.vim`
+Then in your init.vim:
 
 >vim
     " For light theme (primary)
@@ -57,104 +133,131 @@ Inside `init.vim`
     " colorscheme scholar
 <
 
-Inside `init.lua`
+
+QUICK START                                         *scholar.nvim-quick-start*
+
+
+LUA CONFIGURATION ~
 
 >lua
-    -- For light theme (primary)
-    vim.o.background = "light"
-    vim.cmd([[colorscheme scholar]])
+    require("scholar").setup({
+      contrast = "soft",  -- "hard", "soft" or "" (default)
+      transparent_mode = false,
+    })
+    
+    -- Choose your preferred theme
+    vim.o.background = "light"  -- For light theme
+    vim.cmd("colorscheme scholar")
     
     -- OR for dark theme
     -- vim.o.background = "dark"
-    -- vim.cmd([[colorscheme scholar]])
+    -- vim.cmd("colorscheme scholar")
 <
+
+
+VIM CONFIGURATION ~
+
+>vim
+    " For light theme (primary)
+    set background=light
+    colorscheme scholar
+    
+    " OR for dark theme
+    " set background=dark
+    " colorscheme scholar
+<
+
+
+CONFIGURATION                                     *scholar.nvim-configuration*
+
+Scholar provides extensive customization options while maintaining sensible
+defaults:
+
+>lua
+    require("scholar").setup({
+      terminal_colors = true,     -- Enable terminal colors
+      undercurl = true,          -- Enable undercurls for diagnostics
+      underline = true,          -- Enable underlines
+      bold = true,               -- Enable bold text
+      italic = {
+        strings = true,          -- Italicize strings
+        emphasis = true,         -- Italicize emphasized text
+        comments = true,         -- Italicize comments
+        operators = false,       -- Don't italicize operators
+        folds = true,           -- Italicize fold text
+      },
+      strikethrough = true,      -- Enable strikethrough
+      invert_selection = false,  -- Don't invert selections
+      invert_signs = false,      -- Don't invert sign column
+      invert_tabline = false,    -- Don't invert tabline
+      inverse = true,            -- Invert background for search, diffs, etc.
+      contrast = "",             -- Contrast level: "hard", "soft", or ""
+      palette_overrides = {},    -- Override palette colors
+      overrides = {},            -- Override highlight groups
+      dim_inactive = false,      -- Don't dim inactive windows
+      transparent_mode = false,  -- Disable transparent background
+    })
+<
+
+**Important:** Always call `setup()` before setting the colorscheme!
+
+
+PALETTE CUSTOMIZATION ~
+
+Override specific colors while maintaining the sepia harmony:
+
+>lua
+    require("scholar").setup({
+      palette_overrides = {
+        bright_red = "#CC6666",    -- Custom error color
+        gray = "#999999",          -- Custom comment color
+      }
+    })
+<
+
+
+HIGHLIGHT GROUP OVERRIDES ~
+
+Customize specific highlighting:
+
+>lua
+    require("scholar").setup({
+      overrides = {
+        -- UI elements
+        SignColumn = { bg = "#F5F5DC" },
+        
+        -- Treesitter groups
+        ["@comment.lua"] = { fg = "#8B7355", italic = true },
+        ["@string"] = { fg = "#8B6F47" },
+        
+        -- LSP semantic tokens
+        ["@lsp.type.method"] = { fg = "#A0623A", bold = true },
+      }
+    })
+<
+
+
+ACKNOWLEDGMENTS                                 *scholar.nvim-acknowledgments*
+
+**scholar.nvim** is built upon the excellent foundation of gruvbox.nvim
+<https://github.com/ellisonleao/gruvbox.nvim> by @ellisonleao
+<https://github.com/ellisonleao>. The robust architecture and thoughtful design
+of gruvbox made Scholar possible.
+
+**Color inspiration** comes from the sepia reading theme in the Readera
+<https://play.google.com/store/apps/details?id=org.readera> Android app, which
+demonstrates how warm, paper-like tones can reduce eye strain and create a
+comfortable reading environment.
+
+
+LICENSE                                                 *scholar.nvim-license*
+
+MIT License - see LICENSE <LICENSE> for details.
 
 ==============================================================================
-4. Configuration                                  *scholar.nvim-configuration*
+1. Links                                                  *scholar.nvim-links*
 
-Additional settings for scholar are:
-
->lua
-    -- Default options:
-    require("scholar").setup({
-      terminal_colors = true, -- add neovim terminal colors
-      undercurl = true,
-      underline = true,
-      bold = true,
-      italic = {
-        strings = true,
-        emphasis = true,
-        comments = true,
-        operators = false,
-        folds = true,
-      },
-      strikethrough = true,
-      invert_selection = false,
-      invert_signs = false,
-      invert_tabline = false,
-      inverse = true, -- invert background for search, diffs, statuslines and errors
-      contrast = "", -- can be "hard", "soft" or empty string
-      palette_overrides = {},
-      overrides = {},
-      dim_inactive = false,
-      transparent_mode = false,
-    })
-    vim.cmd("colorscheme scholar")
-<
-
-**VERY IMPORTANT**Make sure to call setup() **BEFORE** calling the colorscheme
-command, to use your custom configs
-
-OVERRIDING                             *scholar.nvim-configuration-overriding*
-
-PALETTE ~
-
-You can specify your own palette colors. For example:
-
->lua
-    require("scholar").setup({
-        palette_overrides = {
-            bright_green = "#990000",
-        }
-    })
-    vim.cmd("colorscheme scholar")
-<
-
-HIGHLIGHT GROUPS ~
-
-If you don't enjoy the current color for a specific highlight group, now you
-can just override it in the setup. For example:
-
->lua
-    require("scholar").setup({
-        overrides = {
-            SignColumn = {bg = "#ff9900"}
-        }
-    })
-    vim.cmd("colorscheme scholar")
-<
-
-It also works with treesitter groups and lsp semantic highlight tokens
-
->lua
-    require("scholar").setup({
-        overrides = {
-            ["@lsp.type.method"] = { bg = "#ff9900" },
-            ["@comment.lua"] = { bg = "#000000" },
-        }
-    })
-    vim.cmd("colorscheme scholar")
-<
-
-Please note that the override values must follow the attributes from the
-highlight group map, such as:
-
-- **fg** - foreground color
-- **bg** - background color
-- **bold** - true or false for bold font
-- **italic** - true or false for italic font
-
-Other values can be seen in |`synIDattr`|
+1. *@ellisonleao*: 
 
 Generated by panvimdoc <https://github.com/kdheepak/panvimdoc>
 
